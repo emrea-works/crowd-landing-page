@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;700&display=swap"
+		rel="stylesheet" />
+
+	<link rel="stylesheet" href="js/jparallax/css/jquery.parallax.css" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./css/style.css" />
+
+	<script>document.documentElement.className = 'js';</script>
+	<title>Welcome!</title>
+</head>
+
+<body>
+	<div class="container-fluid ">
+
+		<header>
+			<nav>
+				<div id="logo">
+					<a href="/"><img class="logo" src="./img/logo-crowd.svg" alt="CROWD Logo"></a>
+				</div>
+				<div id="menu-inline">
+					<ul class="">
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a class="nav-link" href="#">SOLUTIONS</a>
+						</li>
+						<li>
+							<a class="nav-link" href="#">STRATEGY</a>
+						</li>
+						<li>
+							<a class="nav-link" href="#">COMPANIES</a>
+						</li>
+						<li>
+							<a class="nav-link" href="#">TEAM</a>
+						</li>
+						<li>
+							<a class="nav-link" href="#">CONTACT</a>
+						</li>
+					</ul>
+				</div>
+
+			</nav>
+		</header>
+
+		<!-- <div class="slider-background"><img src="./img/ellipse-background-of-slider.svg" alt=""></div> -->
+
+		<div class="container slider" id="slide-smart-city" style="">
+			
+				<div class="crowd-paragraph">
+					<h6 class="label">STRATEGIES</h6>
+					<h1>Smart City & <br>Urbanisation</h1>
+					<p>
+						We are committed in every way for Smart Cities; urban environments
+						where some key trends and developments become one, in functionality,
+						technology and sustainability.
+					</p>
+				</div>
+				
+				
+				<!-- slide-smart-city > -->
+				<div class="collage" style="width: 720px; height: 461px; ">
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-12.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-11.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-10.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-09.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-08.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-07.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-06.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-05.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-04.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-03.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-02.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-01.png" alt=""></div>
+					<div class="px-layer"><img src="./img/slide-smart-city/collage-element--smart-city-00.png" alt=""></div>
+					<img class="stamp" id="stamp-smart-city" style="top: 303px; left: -10px;" src="./img/stamp.svg" alt="">
+				</div>
+
+	</div>
+
+
+
+
+	<!-- <div class="container" style="margin-top: 200px; background-color:bisque">
+		
+
+				<div class="crowd-paragraph">
+					<h1>About CROWD</h1>
+					<p>
+						Creators of the outside world is a young and innovative group of
+						established companies that is involved in designing the public
+						space. crowd aims to make a conscious contribution to the living
+						environment of people with developing products by their companies
+						Velopa B.V, Cyclepods Ltd, Ziegler Metallbearbeitung, Ijslander
+						B.V And Lumiguide B.V.
+					</p>
+				</div>
+			
+			<div class="col">
+				<div class="collage">
+					<div class="px-layer"><img src="./img/about-crowd/collage-about-crowd-01.png" alt=""></div>
+					<div class="px-layer"><img src="./img/about-crowd/collage-about-crowd-02.png" alt=""></div>
+					<div class="px-layer"><img src="./img/about-crowd/collage-about-crowd-03.png" alt=""></div>
+					<div class="px-layer"><img src="./img/about-crowd/collage-about-crowd-04.png" alt=""></div>
+					<div class="px-layer"><img src="./img/about-crowd/collage-about-crowd-05.png" alt=""></div>
+					<div class="px-layer"><img src="./img/about-crowd/collage-about-crowd-06.png" alt=""></div>
+				</div>
+			
+	</div> -->
+
+
+
+	<footer style="margin-top: 200px;">
+		<div class="container">
+			<div class="row">
+				<div class="col"></div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Scripts -->
+
+	<script src="./js/jquery-3.5.1.min.js"></script>
+	<script src="./js/jparallax/js/jquery.parallax.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+
+			var obj = $('.px-layer');
+			obj.not('.stamp').each(function (index, element) {
+				// width %
+				index += 100.1 / 1.1;
+				console.log($(this).attr('class'))
+				$(this).css({
+					'width': + index + "%",
+					'height': + index + "%"
+				});
+			});
+
+			$('.collage').each(function () {
+				$('.px-layer', this).parallax({
+					mouseport: jQuery(this).parents('.slider'),
+					decay: .1,
+					xparallax: "110%",
+					yparallax: "20%",
+					frameDuration: 66
+				});
+			})
+
+			/* $('.px-layer').parallax({
+				mouseport: $(".collage").parents('.row'),
+				// yparallax: '1000%',
+				// xparallax: '1000%',
+				decay: .1,
+				xparallax: "50%",
+				yparallax: "20%",
+				frameDuration: 66
+			}); */
+
+		});
+	</script>
+
+</body>
+
+</html>

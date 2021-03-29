@@ -1,0 +1,249 @@
+@import url(c:\Users\ui\OneDrive\Crowd Outside\Landing Page Design\website\landing-page-nobs\css\reset.css);
+:root {
+  --crowd-font: "Fira Sans Condensed";
+  --font-light: 300;
+  --font-normal: 400;
+  --font-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: var(--crowd-font);
+}
+
+body {
+  font-size: 14px;
+  line-height: 22px;
+  background: url(../img/ellipse-background-of-slider.svg) no-repeat;
+  background-position: center -99rem;
+  -webkit-transform: perspective(6.5cm);
+          transform: perspective(6.5cm);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  top: 0;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2.25rem;
+}
+
+header nav div#logo {
+  position: relative;
+  width: 92px;
+  height: 92px;
+}
+
+header nav div#logo a {
+  display: block;
+}
+
+header nav div#logo img {
+  max-width: 100%;
+}
+
+header nav #menu-inline {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+header nav #menu-inline li {
+  display: inline-block;
+}
+
+header nav #menu-inline li a {
+  padding: 1rem 1.8rem;
+  color: #3b3939;
+}
+
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-bold);
+  font-size: 14px;
+  line-height: 110%;
+}
+
+h1 {
+  font-size: 14px;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: -40px;
+}
+
+.slider h1 {
+  font-size: 49.3px;
+  white-space: nowrap;
+  margin-bottom: 14px;
+}
+
+.slider .label {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 768px) {
+  .slider .slider .collage {
+    max-width: 65%;
+    right: 0%;
+  }
+}
+
+.collage {
+  position: absolute;
+  right: 14%;
+  z-index: -1;
+  height: 100%;
+}
+
+.collage .px-layer {
+  position: absolute;
+  display: block;
+  -webkit-transform: scale(1.1) translate(0);
+          transform: scale(1.1) translate(0);
+  -ms-transform-origin-x: 101%;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.stamp {
+  position: absolute;
+  width: 143px !important;
+  height: 143px !important;
+  -webkit-animation: rotateForever 48s linear infinite;
+          animation: rotateForever 48s linear infinite;
+  /* transform-origin: 0; */
+}
+
+.crowd-paragraph {
+  position: absolute;
+  left: 5%;
+  max-width: 245px;
+  padding: 5rem 3rem 3rem;
+  /* background-color: #ffffffAA; */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+@-webkit-keyframes rotateForever {
+  from {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotateForever {
+  from {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1320px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
