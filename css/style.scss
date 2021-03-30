@@ -34,8 +34,8 @@ body {
 	font-size: $base-text-size;
 	line-height: $base-text-line-height;
 	background: url(../img/ellipse-background-of-slider.svg) no-repeat;
-	background-position:  center -99rem;
-    transform: perspective(6.5cm);
+	background-position: center -99rem;
+	transform: perspective(6.5cm);
 }
 
 a {
@@ -58,9 +58,11 @@ header {
 			position: relative;
 			width: 92px;
 			height: 92px;
+
 			a {
 				display: block;
 			}
+
 			img {
 				max-width: 100%;
 			}
@@ -85,8 +87,8 @@ header {
 	.row {
 		display: flex;
 		flex-direction: row;
-		.col {
-		}
+
+		.col {}
 	}
 }
 
@@ -108,7 +110,7 @@ h1 {
 .slider {
 	display: flex;
 	justify-content: space-between;
-    margin-top: -40px;
+	/* margin-top: -40px; */
 
 	h1 {
 		font-size: $base-slide-title-size;
@@ -116,22 +118,22 @@ h1 {
 		margin-bottom: $base-text-size;
 	}
 
-    .label {
-        text-transform: uppercase;
-        letter-spacing: 0.4em;
-        font-style: italic;
-        font-weight: 400;
-        margin-bottom: $base-text-size;
-    }
+	.label {
+		text-transform: uppercase;
+		letter-spacing: 0.4em;
+		font-style: italic;
+		font-weight: 400;
+		margin-bottom: $base-text-size;
+	}
 
-    @media (min-width: $breakpoint-tablet) {
-        .slider {
-            .collage {
-                max-width: 65%;
-                right: 0%;
-            }
-        }
-    }
+	@media (min-width: $breakpoint-tablet) {
+		.slider {
+			.collage {
+				max-width: 65%;
+				right: 0%;
+			}
+		}
+	}
 }
 
 .collage {
@@ -139,19 +141,20 @@ h1 {
 	right: 14%;
 	z-index: -1;
 	height: 100%;
+
 	.px-layer {
 		position: absolute;
 		display: block;
 		transform: scale(1.1) translate(0);
 		-ms-transform-origin-x: 101%;
-		transition: all 0.5s ease-out;
+		/* transition: all 0.5s ease-out; */
 	}
 }
 
 .stamp {
 	position: absolute;
-    width: 143px !important;
-    height: 143px !important;
+	width: 143px !important;
+	height: 143px !important;
 	animation: rotateForever 48s linear infinite;
 	/* transform-origin: 0; */
 }
@@ -169,6 +172,7 @@ h1 {
 	from {
 		transform: rotateZ(0);
 	}
+
 	to {
 		transform: rotateZ(360deg);
 	}
@@ -181,27 +185,32 @@ h1 {
 .container-lg,
 .container-md,
 .container-sm {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+	width: 100%;
+	padding-right: var(--bs-gutter-x, 0.75rem);
+	padding-left: var(--bs-gutter-x, 0.75rem);
+	margin-right: auto;
+	margin-left: auto;
 }
 
 @media (min-width: $breakpoint-phone) {
+
 	.container-sm,
 	.container {
 		max-width: 540px;
 	}
 }
+
 @media (min-width: $breakpoint-tablet) {
+
 	.container-md,
 	.container-sm,
 	.container {
 		max-width: 720px;
 	}
 }
+
 @media (min-width: $breakpoint-laptop) {
+
 	.container-lg,
 	.container-md,
 	.container-sm,
@@ -209,7 +218,9 @@ h1 {
 		max-width: 960px;
 	}
 }
+
 @media (min-width: $breakpoint-desktop) {
+
 	.container-xl,
 	.container-lg,
 	.container-md,
@@ -218,7 +229,9 @@ h1 {
 		max-width: 1140px;
 	}
 }
+
 @media (min-width: $breakpoint-monitor) {
+
 	.container-xxl,
 	.container-xl,
 	.container-lg,
