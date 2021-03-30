@@ -125,6 +125,13 @@ h1 {
   margin-bottom: 14px;
 }
 
+.slogan {
+  font-size: 32.65px;
+  line-height: 110%;
+  font-weight: 400;
+  margin-bottom: 65.128px;
+}
+
 .slider {
   /* margin-top: -40px; */
 }
