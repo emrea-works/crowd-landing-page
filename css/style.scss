@@ -7,7 +7,6 @@
 	--font-bold: 700;
 }
 
-
 $breakpoint-phone: 576px;
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 992px;
@@ -105,10 +104,44 @@ h1 {
 	font-size: $base-text-size;
 }
 
+/* $breakpointMap: (
+	"phone": "576px",
+	"tablet": "768px",
+	"laptop": "992px",
+	"desktop": "1200px",
+	"monitor": "1400px");
+ */
+	
+	/* $breakpoint-scales: (
+		"phone": "0.8",
+		"tablet": "0.9",
+		"laptop": "1",
+		"desktop": "1.12",
+		"monitor": "1.2"
+		); */
+		
+
+
+$scaleMap: (
+	$breakpoint-phone: 0.8,
+	$breakpoint-tablet: 0.9,
+	$breakpoint-laptop: 1.1,
+	$breakpoint-desktop: 1.12,
+	$breakpoint-monitor: 1.2
+);
+
+
 .relative-wrapper {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	transition: transform 1s ease;
+
+	@each $breakpoint, $value in $scaleMap {
+		@media (min-width: #{$breakpoint}) {			
+			transform: scale($value); 
+		}
+	}
 }
 
 .crowd-paragraph {
@@ -150,14 +183,7 @@ h1 {
 		margin-bottom: $base-text-size;
 	}
 
-	@media (min-width: $breakpoint-tablet) {
-		.slider {
-			.collage {
-				max-width: 65%;
-				right: 0%;
-			}
-		}
-	}
+
 }
 
 .collage {
@@ -177,7 +203,7 @@ h1 {
 }
 
 .background-box {
-	position: absolute; 	
+	position: absolute;
 	z-index: -2;
 }
 
@@ -209,15 +235,17 @@ h1 {
 .container-fluid:after,
 .row:before,
 .row:after {
-  display: table;
-  content: " ";
+	display: table;
+	content: " ";
 }
+
 .clearfix:after,
 .container:after,
 .container-fluid:after,
 .row:after {
-  clear: both;
+	clear: both;
 }
+
 .container,
 .container-fluid,
 .container-xxl,
@@ -230,6 +258,7 @@ h1 {
 	padding-left: var(--bs-gutter-x, 0.75rem); */
 	margin-right: auto;
 	margin-left: auto;
+	transition: max-width 300ms ease;
 }
 
 @media (min-width: $breakpoint-phone) {
@@ -281,4 +310,3 @@ h1 {
 		max-width: 1320px;
 	}
 }
-
