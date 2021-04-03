@@ -22,19 +22,22 @@ $base-title-size: 22.65px;
 $base-title-line-height: 110%;
 $base-slide-title-size: 49.3px;
 
+$scaleMap: ($breakpoint-phone: 0.7,
+	$breakpoint-tablet: 0.8,
+	$breakpoint-laptop: 1,
+	$breakpoint-desktop: 1.12,
+	$breakpoint-monitor: 1.18);
+
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: var(--crowd-font);
+	box-sizing: border-box;
 }
 
 body {
 	font-size: $base-text-size;
 	line-height: $base-text-line-height;
-	background: url(../img/ellipse-background-of-slider.svg) no-repeat;
-	background-position: center -99rem;
-	transform: perspective(6.5cm);
 }
 
 a {
@@ -104,44 +107,51 @@ h1 {
 	font-size: $base-text-size;
 }
 
-/* $breakpointMap: (
-	"phone": "576px",
-	"tablet": "768px",
-	"laptop": "992px",
-	"desktop": "1200px",
-	"monitor": "1400px");
- */
-	
-	/* $breakpoint-scales: (
-		"phone": "0.8",
-		"tablet": "0.9",
-		"laptop": "1",
-		"desktop": "1.12",
-		"monitor": "1.2"
-		); */
-		
+.dark-background {
+	color: #ffffff !important;
+}
 
-
-$scaleMap: (
-	$breakpoint-phone: 0.8,
-	$breakpoint-tablet: 0.9,
-	$breakpoint-laptop: 1.1,
-	$breakpoint-desktop: 1.12,
-	$breakpoint-monitor: 1.2
-);
-
+.slider-background {
+	//background: url(../img/ellipse-background-of-slider.svg) no-repeat;
+	//background-position: center center;
+	//background-size: 100%;
+	// transform-origin: x-offset y-offset;
+	overflow: hidden;
+	$size: 140em;
+	// $offset: calc( -100em);
+	position: absolute;
+	z-index: -99;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	display: flex;
+	img {
+		//animation: rotateForever 22s linear infinite;
+		align-self: center;
+		position: absolute;
+		transform: scale(1.6);
+		transform-origin: center;
+		//top: -80em;
+		top: -100px;
+	}
+}
 
 .relative-wrapper {
 	position: relative;
 	display: flex;
+	align-content: center;
 	justify-content: space-around;
+	transform-origin: top;
 	transition: transform 1s ease;
+	height: 90vh;
 
-	@each $breakpoint, $value in $scaleMap {
-		@media (min-width: #{$breakpoint}) {			
-			transform: scale($value); 
-		}
-	}
+	// @each $breakpoint, $value in $scaleMap {
+	// 	@media (min-width: #{$breakpoint}) {			
+	// 		transform: scale($value); 
+	// 	}
+	// }
 }
 
 .crowd-paragraph {
@@ -205,6 +215,8 @@ $scaleMap: (
 .background-box {
 	position: absolute;
 	z-index: -2;
+	/* left: 5rem; */
+	width: 88%;
 }
 
 .stamp {
@@ -226,7 +238,44 @@ $scaleMap: (
 	}
 }
 
-/*  */
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+	width: 100%;
+	/* padding-right: var(--bs-gutter-x, 0.75rem);
+	padding-left: var(--bs-gutter-x, 0.75rem); */
+	margin-right: auto;
+	margin-left: auto;
+	transition: max-width 300ms ease;
+	// border: 1px solid red;
+}
+
+.container-fluid {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.row-no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.row-no-gutters [class*="col-"] {
+	padding-right: 0;
+	padding-left: 0;
+}
+
 .clearfix:before,
 .clearfix:after,
 .container:before,
@@ -244,21 +293,6 @@ $scaleMap: (
 .container-fluid:after,
 .row:after {
 	clear: both;
-}
-
-.container,
-.container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
-	width: 100%;
-	/* padding-right: var(--bs-gutter-x, 0.75rem);
-	padding-left: var(--bs-gutter-x, 0.75rem); */
-	margin-right: auto;
-	margin-left: auto;
-	transition: max-width 300ms ease;
 }
 
 @media (min-width: $breakpoint-phone) {
