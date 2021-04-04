@@ -268,9 +268,55 @@ h2 {
 }
 
 .companies .company .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   z-index: 2;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.companies .company .front {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.companies .company .behind {
+  width: 66%;
+  display: none;
+}
+
+.companies .company .content-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.companies .company h3 {
+  font-size: 22.65px;
+  line-height: 110%;
+  background: url(../img/companies/arrow-right.png) no-repeat;
+  background-position: left bottom;
+  height: 61px;
+}
+
+.companies .company .content-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.companies .company .content-row .content-column {
+  width: 33%;
+  padding-right: 10%;
 }
 
 .companies .company .flap-title {
@@ -287,30 +333,32 @@ h2 {
 }
 
 .companies .enlarge {
-  -webkit-box-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
+  -webkit-box-flex: 100;
+      -ms-flex: 100;
+          flex: 100;
+}
+
+.companies .enlarge .front {
+  width: 33%;
+}
+
+.companies .enlarge .behind {
+  display: block;
 }
 
 .companies .flap {
+  cursor: pointer;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 0;
 }
 
 .companies .flap * {
-  -webkit-transition: -webkit-box-flex block 400ms ease;
-  transition: -webkit-box-flex block 400ms ease;
-  transition: flex block 400ms ease;
-  transition: flex block 400ms ease, -webkit-box-flex block 400ms ease, -ms-flex block 400ms ease;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 
-.companies .flap .content {
-  display: contents;
-}
-
-.companies .flap p, .companies .flap .company-logo {
+.companies .flap .front, .companies .flap .behind {
   display: none;
 }
 
@@ -321,6 +369,10 @@ h2 {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   opacity: .6;
+}
+
+.companies .flap:hover .flap-title {
+  opacity: 1;
 }
 
 @-webkit-keyframes rotateForever {

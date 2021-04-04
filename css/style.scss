@@ -259,8 +259,35 @@ h2 {
 		// 	flex: 6;
 		// }
 		.content {
+			display: flex;
 			z-index: 2;
 			box-sizing: border-box;
+		}
+		.front {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.behind {
+			width: 66%;
+			display: none;
+		}
+		.content-slider  {
+			display: flex;
+		}
+		h3 {
+			font-size: $base-title-size;
+			line-height: $base-title-line-height;
+			background: url(../img/companies/arrow-right.png) no-repeat;
+			background-position: left bottom;
+			height: 61px;		
+		}
+		.content-row {
+			display: flex;
+			.content-column {
+				width: 33%;
+				padding-right: 10%;
+			}
 		}
 		.flap-title {
 			display: none;
@@ -275,17 +302,20 @@ h2 {
 		}
 	}
 	.enlarge {
-		flex: 6;
+		flex: 100;
+		.front {
+			width: 33%;
+		}
+		.behind {
+			display: block;
+		}
 	}
 	.flap {
+		cursor: pointer;
 		flex: 1;
-		padding: 0;
 		//max-width: 10px;
-		* { transition: flex block 400ms ease;}
-		.content {
-			display: contents;
-		}
-		p, .company-logo {
+		* { transition: all 200ms ease;}
+		.front, .behind {
 			display: none;
 		}
 		.flap-title {
@@ -293,6 +323,11 @@ h2 {
 			transform-origin: center;
   		transform: rotate(-90deg);
 			opacity: .6;
+		}
+		&:hover {
+			.flap-title {
+				opacity: 1;
+			}
 		}
 	}
 }
