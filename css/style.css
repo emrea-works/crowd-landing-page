@@ -289,15 +289,25 @@ h2 {
           align-items: center;
 }
 
+.companies .company .company-logo {
+  width: 125px;
+  margin-bottom: 2em;
+}
+
 .companies .company .behind {
   width: 66%;
   display: none;
 }
 
 .companies .company .content-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
+  width: 60vh;
+  height: 150px;
+  margin-bottom: 2em;
+}
+
+.companies .company .content-slider .slide > img {
+  height: 150px;
 }
 
 .companies .company h3 {
@@ -358,7 +368,8 @@ h2 {
   transition: all 200ms ease;
 }
 
-.companies .flap .front, .companies .flap .behind {
+.companies .flap .front,
+.companies .flap .behind {
   display: none;
 }
 

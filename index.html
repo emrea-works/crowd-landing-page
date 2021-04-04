@@ -11,7 +11,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;700&display=swap"
 		rel="stylesheet" />
 
-	<link rel="stylesheet" href="js/jparallax/css/jquery.parallax.css" />
+	<link rel="stylesheet" href="js/slick/slick.css" />
+	<link rel="stylesheet" href="js/slick/slick-theme.css" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/style.css" />
@@ -226,16 +227,15 @@
 							<div class="front">
 								<img class="company-logo" src="./img/companies/logo-cyclepods.png" alt="">
 								<p>Market leader within Germany focused upon Street furniture, Sports, Shelters and Bicycle
-									infrastructure. Production, Design and sales organisation.
-								</p>
+									infrastructure. Production, Design and sales organisation.	</p>
 							</div>
 							<div class="behind">
 								<div class="content-slider">
-									<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-1.jpg" alt=""></div>
-									<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-2.jpg" alt=""></div>
-									<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-3.jpg" alt=""></div>
-									<!-- <div class="slide"><img src="img/content-cyclepods/slide-cyclepods-4.jpg" alt=""></div>
-									<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-5.jpg" alt=""></div> -->
+										<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-1.jpg" alt=""></div>
+										<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-2.jpg" alt=""></div>
+										<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-3.jpg" alt=""></div>
+										<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-4.jpg" alt=""></div>
+										<div class="slide"><img src="img/content-cyclepods/slide-cyclepods-5.jpg" alt=""></div>
 								</div>
 								<div class="content-row">
 									<div class="content-column">
@@ -445,6 +445,7 @@
 	<!-- Scripts -->
 
 	<script src="./js/jquery-3.5.1.min.js"></script>
+	<script src="./js/slick/slick.min.js"></script>
 	<script src="./js/gsap/gsap.min.js"></script>
 	<script src="./js/gsap/EasePack.min.js"></script>
 	<script src="./js/gsap/MotionPathPlugin.min.js"></script>
@@ -512,8 +513,23 @@
 				console.log("this.tagNAme: " + $(this).prop('tagName'));
 				console.log("this.class: " + $(this).attr('class'));
 			});
-			// company.removeClass('enlarge').addClass('flap');
-			// company.eq(0).removeClass('flap').addClass('enlarge');
+			company.removeClass('enlarge').addClass('flap');
+			company.eq(0).removeClass('flap').addClass('enlarge');
+
+
+			// slick
+			$('.content-slider').slick({				
+				// lazyLoad: 'ondemand',
+				slidesToShow: 2,
+				infinite: true,
+				arrows: false,
+				dots: false,
+				autoplay: true,
+				centerMode: true,
+				speed: 1000,
+				autoplaySpeed: 2000,
+				variableWidth: true
+			})
 
 		}); // jquery
 	</script>
