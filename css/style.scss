@@ -14,11 +14,13 @@ $breakpoint-desktop: 1200px;
 $breakpoint-monitor: 1400px;
 
 $base-padding: 2.25rem;
+$base-border-radius: 3px;
 $menu-items-spacing: 1rem 1.8rem;
 $base-color-dark: rgb(59, 57, 57);
 $base-text-size: 14px;
 $base-text-line-height: 22px;
 $base-title-size: 22.65px;
+$base-subheader-size: 22.65px;
 $base-title-line-height: 110%;
 $base-slide-title-size: 49.3px;
 
@@ -104,7 +106,15 @@ h6 {
 }
 
 h1 {
-	font-size: $base-text-size;
+	font-size: $base-title-size;
+}
+
+h2 {
+	font-size: $base-subheader-size;
+	font-weight: 300;
+	line-height: 110%;
+	letter-spacing: 1em;
+	text-transform: uppercase;
 }
 
 .dark-background {
@@ -228,6 +238,65 @@ h1 {
 	/* transform-origin: 0; */
 }
 
+.companies {
+	* { box-sizing: border-box; }
+	display: flex;
+	flex-wrap: wrap;
+	.company {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		position: relative;
+		transition: flex .3s ease;
+		list-style: none;
+		padding: $base-padding;
+		margin: 2px;
+		background-color: #3C4D7A;
+		border-radius: $base-border-radius;
+		// &:hover {
+		// 	flex: 6;
+		// }
+		.content {
+			z-index: 2;
+			box-sizing: border-box;
+		}
+		.flap-title {
+			display: none;
+		}
+		.company-logo {
+			max-width: 125px;
+		}
+		p {
+			margin-top: $base-text-line-height;
+			// width: 150px;
+			max-width: 150px;
+		}
+	}
+	.enlarge {
+		flex: 6;
+	}
+	.flap {
+		flex: 1;
+		padding: 0;
+		//max-width: 10px;
+		* { transition: flex block 400ms ease;}
+		.content {
+			display: contents;
+		}
+		p, .company-logo {
+			display: none;
+		}
+		.flap-title {
+			display: block;
+			transform-origin: center;
+  		transform: rotate(-90deg);
+			opacity: .6;
+		}
+	}
+}
+
 @keyframes rotateForever {
 	from {
 		transform: rotateZ(0);
@@ -251,7 +320,7 @@ h1 {
 	margin-right: auto;
 	margin-left: auto;
 	transition: max-width 300ms ease;
-	// border: 1px solid red;
+	border: 2px dashed fuchsia;
 }
 
 .container-fluid {

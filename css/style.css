@@ -92,7 +92,15 @@ h6 {
 }
 
 h1 {
-  font-size: 14px;
+  font-size: 22.65px;
+}
+
+h2 {
+  font-size: 22.65px;
+  font-weight: 300;
+  line-height: 110%;
+  letter-spacing: 1em;
+  text-transform: uppercase;
 }
 
 .dark-background {
@@ -220,6 +228,101 @@ h1 {
   /* transform-origin: 0; */
 }
 
+.companies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.companies * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.companies .company {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: -webkit-box-flex .3s ease;
+  transition: -webkit-box-flex .3s ease;
+  transition: flex .3s ease;
+  transition: flex .3s ease, -webkit-box-flex .3s ease, -ms-flex .3s ease;
+  list-style: none;
+  padding: 2.25rem;
+  margin: 2px;
+  background-color: #3C4D7A;
+  border-radius: 3px;
+}
+
+.companies .company .content {
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.companies .company .flap-title {
+  display: none;
+}
+
+.companies .company .company-logo {
+  max-width: 125px;
+}
+
+.companies .company p {
+  margin-top: 22px;
+  max-width: 150px;
+}
+
+.companies .enlarge {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.companies .flap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0;
+}
+
+.companies .flap * {
+  -webkit-transition: -webkit-box-flex block 400ms ease;
+  transition: -webkit-box-flex block 400ms ease;
+  transition: flex block 400ms ease;
+  transition: flex block 400ms ease, -webkit-box-flex block 400ms ease, -ms-flex block 400ms ease;
+}
+
+.companies .flap .content {
+  display: contents;
+}
+
+.companies .flap p, .companies .flap .company-logo {
+  display: none;
+}
+
+.companies .flap .flap-title {
+  display: block;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  opacity: .6;
+}
+
 @-webkit-keyframes rotateForever {
   from {
     -webkit-transform: rotateZ(0);
@@ -256,6 +359,7 @@ h1 {
   margin-left: auto;
   -webkit-transition: max-width 300ms ease;
   transition: max-width 300ms ease;
+  border: 2px dashed fuchsia;
 }
 
 .container-fluid {
