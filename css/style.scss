@@ -277,9 +277,12 @@ h2 {
 			align-items: center;
 		}
 
-		.company-logo {
-			width: 125px;
+		.company-logo { 
+			height: 150px;
 			margin-bottom: $content-margin-bottom;
+			img {
+				width: 135px;
+			}
 		}
 
 		.behind {
@@ -289,7 +292,7 @@ h2 {
 
 		.content-slider {
 			display: block;
-			width: 60vh;
+			width: 50vh;
 			height: 150px;
 			margin-bottom: $content-margin-bottom;
 
@@ -319,12 +322,8 @@ h2 {
 			display: none;
 		}
 
-		.company-logo {
-			max-width: 125px;
-		}
-
 		p {
-			margin-top: $base-text-line-height;
+			// margin-top: $base-text-line-height;
 			// width: 150px;
 			max-width: 150px;
 		}

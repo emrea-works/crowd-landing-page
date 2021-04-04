@@ -290,8 +290,12 @@ h2 {
 }
 
 .companies .company .company-logo {
-  width: 125px;
+  height: 150px;
   margin-bottom: 2em;
+}
+
+.companies .company .company-logo img {
+  width: 135px;
 }
 
 .companies .company .behind {
@@ -301,7 +305,7 @@ h2 {
 
 .companies .company .content-slider {
   display: block;
-  width: 60vh;
+  width: 50vh;
   height: 150px;
   margin-bottom: 2em;
 }
@@ -333,12 +337,7 @@ h2 {
   display: none;
 }
 
-.companies .company .company-logo {
-  max-width: 125px;
-}
-
 .companies .company p {
-  margin-top: 22px;
   max-width: 150px;
 }
 
