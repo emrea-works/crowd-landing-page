@@ -23,6 +23,8 @@ $base-title-size: 22.65px;
 $base-subheader-size: 22.65px;
 $base-title-line-height: 110%;
 $base-slide-title-size: 49.3px;
+$base-box-shadow: 0 0 5px #00000022;
+$hover-box-shadow: 0 0 20px #00000022;
 
 $scaleMap: ($breakpoint-phone: 0.7,
 	$breakpoint-tablet: 0.8,
@@ -246,9 +248,11 @@ h2 {
 
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+
+	$active-background: #162e79;
 
 	.company {
-		flex: 1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -258,11 +262,25 @@ h2 {
 		list-style: none;
 		padding: $base-padding;
 		margin: 2px;
-		background-color: #3C4D7A;
+		background-color: #203885;
 		border-radius: $base-border-radius;
-		// &:hover {
-		// 	flex: 6;
-		// }
+		box-shadow: $base-box-shadow;
+		cursor: pointer;
+		transition: all 500ms ease;
+
+		&:hover {
+			box-shadow: $hover-box-shadow;
+			background-color: $active-background;
+
+			.flap-title {
+				opacity: 1;
+			}
+		}
+
+		p {
+			max-width: 150px;
+		}
+
 		$content-margin-bottom: 2em;
 
 		.content {
@@ -277,11 +295,12 @@ h2 {
 			align-items: center;
 		}
 
-		.company-logo { 
+		.company-logo {
 			height: 150px;
 			margin-bottom: $content-margin-bottom;
+
 			img {
-				width: 135px;
+				width: 150px;
 			}
 		}
 
@@ -292,7 +311,6 @@ h2 {
 
 		.content-slider {
 			display: block;
-			width: 50vh;
 			height: 150px;
 			margin-bottom: $content-margin-bottom;
 
@@ -321,16 +339,16 @@ h2 {
 		.flap-title {
 			display: none;
 		}
-
-		p {
-			// margin-top: $base-text-line-height;
-			// width: 150px;
-			max-width: 150px;
-		}
 	}
 
 	.enlarge {
 		flex: 100;
+		cursor: normal;
+		background: $active-background;
+
+		.content {
+			width: 90vh;
+		}
 
 		.front {
 			width: 33%;
@@ -342,13 +360,7 @@ h2 {
 	}
 
 	.flap {
-		cursor: pointer;
 		flex: 1;
-
-		//max-width: 10px;
-		* {
-			transition: all 200ms ease;
-		}
 
 		.front,
 		.behind {
@@ -360,12 +372,6 @@ h2 {
 			transform-origin: center;
 			transform: rotate(-90deg);
 			opacity: .6;
-		}
-
-		&:hover {
-			.flap-title {
-				opacity: 1;
-			}
 		}
 	}
 }
@@ -393,7 +399,7 @@ h2 {
 	margin-right: auto;
 	margin-left: auto;
 	transition: max-width 300ms ease;
-	border: 2px dashed fuchsia;
+	// border: 2px dashed fuchsia;
 }
 
 .container-fluid {

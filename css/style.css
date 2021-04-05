@@ -234,6 +234,9 @@ h2 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .companies * {
@@ -242,9 +245,6 @@ h2 {
 }
 
 .companies .company {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,8 +263,27 @@ h2 {
   list-style: none;
   padding: 2.25rem;
   margin: 2px;
-  background-color: #3C4D7A;
+  background-color: #203885;
   border-radius: 3px;
+  -webkit-box-shadow: 0 0 5px #00000022;
+          box-shadow: 0 0 5px #00000022;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.companies .company:hover {
+  -webkit-box-shadow: 0 0 20px #00000022;
+          box-shadow: 0 0 20px #00000022;
+  background-color: #162e79;
+}
+
+.companies .company:hover .flap-title {
+  opacity: 1;
+}
+
+.companies .company p {
+  max-width: 150px;
 }
 
 .companies .company .content {
@@ -295,7 +314,7 @@ h2 {
 }
 
 .companies .company .company-logo img {
-  width: 135px;
+  width: 150px;
 }
 
 .companies .company .behind {
@@ -305,7 +324,6 @@ h2 {
 
 .companies .company .content-slider {
   display: block;
-  width: 50vh;
   height: 150px;
   margin-bottom: 2em;
 }
@@ -337,14 +355,16 @@ h2 {
   display: none;
 }
 
-.companies .company p {
-  max-width: 150px;
-}
-
 .companies .enlarge {
   -webkit-box-flex: 100;
       -ms-flex: 100;
           flex: 100;
+  cursor: normal;
+  background: #162e79;
+}
+
+.companies .enlarge .content {
+  width: 90vh;
 }
 
 .companies .enlarge .front {
@@ -356,15 +376,9 @@ h2 {
 }
 
 .companies .flap {
-  cursor: pointer;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-
-.companies .flap * {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
 }
 
 .companies .flap .front,
@@ -379,10 +393,6 @@ h2 {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   opacity: .6;
-}
-
-.companies .flap:hover .flap-title {
-  opacity: 1;
 }
 
 @-webkit-keyframes rotateForever {
@@ -421,7 +431,6 @@ h2 {
   margin-left: auto;
   -webkit-transition: max-width 300ms ease;
   transition: max-width 300ms ease;
-  border: 2px dashed fuchsia;
 }
 
 .container-fluid {
