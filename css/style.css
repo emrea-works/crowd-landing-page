@@ -136,6 +136,10 @@ h2 {
   color: #ffffff !important;
 }
 
+.dark-background * {
+  color: #ffffff !important;
+}
+
 .slider-background {
   overflow: hidden;
   position: absolute;
@@ -623,6 +627,45 @@ h2 {
 .contact-us .flex-grid button:focus {
   margin-top: 1px;
   margin-bottom: 1px;
+}
+
+footer {
+  padding: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #101323;
+}
+
+footer .logos-at-footer {
+  padding: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+footer .logos-at-footer li {
+  list-style: none;
+  width: 10%;
+}
+
+footer .logos-at-footer p {
+  padding: 2.25rem;
 }
 
 @-webkit-keyframes rotateForever {
