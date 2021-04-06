@@ -1,9 +1,31 @@
-@import url(c:\Users\ui\OneDrive\Crowd Outside\Landing Page Design\website\landing-page-nobs\css\reset.css);
-:root {
-  --crowd-font: "Fira Sans Condensed";
-  --font-light: 300;
-  --font-normal: 400;
-  --font-bold: 700;
+/* ----------------------------------------------------------------------------------------------------
+
+SCSS Form Reset Helpers - Forked from: https://gist.github.com/anthonyshort/552543
+
+Intended usage:
+- MIXINS: for very specific use cases, when you dont want to reset absolutly all the forms, very verbose output.
+- PLACEHOLDER SELECTORS: use as extending classes. Less verbose, more generic overrides.
+
+A couple of things to watch out for:
+
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+
+----------------------------------------------------------------------------------------------------*/
+::-webkit-search-decoration {
+  display: none;
+}
+
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
 * {
@@ -12,6 +34,13 @@
   font-family: var(--crowd-font);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+:root {
+  --crowd-font: "Fira Sans Condensed";
+  --font-light: 300;
+  --font-normal: 400;
+  --font-bold: 700;
 }
 
 body {
@@ -88,7 +117,7 @@ h5,
 h6 {
   font-weight: var(--font-bold);
   font-size: 14px;
-  line-height: 110%;
+  line-height: 1.1em;
 }
 
 h1 {
@@ -142,15 +171,15 @@ h2 {
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-transform-origin: top;
           transform-origin: top;
   -webkit-transition: -webkit-transform 1s ease;
   transition: -webkit-transform 1s ease;
   transition: transform 1s ease;
   transition: transform 1s ease, -webkit-transform 1s ease;
-  height: 90vh;
 }
 
 .crowd-paragraph {
@@ -162,6 +191,9 @@ h2 {
   /* background-color: #ffffffAA; */
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .crowd-paragraph h1 {
@@ -216,6 +248,7 @@ h2 {
   z-index: -2;
   /* left: 5rem; */
   width: 88%;
+  border-radius: 4px;
 }
 
 .stamp {
@@ -260,7 +293,7 @@ h2 {
   padding: 2.25rem;
   margin: 3px;
   background-color: #203885;
-  border-radius: 3px;
+  border-radius: 4px;
   -webkit-box-shadow: 0 0 5px #00000022;
           box-shadow: 0 0 5px #00000022;
   cursor: pointer;
@@ -288,7 +321,7 @@ h2 {
 }
 
 .companies .company .content p {
-  width: 10rem;
+  width: 10em;
 }
 
 .companies .company .front {
@@ -322,6 +355,9 @@ h2 {
   display: block;
   height: 150px;
   margin-bottom: 2em;
+  border-radius: 4px;
+  overflow: hidden;
+  width: calc(100% - .5em);
 }
 
 .companies .company .content-slider .slide > img {
@@ -330,7 +366,7 @@ h2 {
 
 .companies .company h3 {
   font-size: 22.65px;
-  line-height: 110%;
+  line-height: 1.1em;
   background: url(../img/companies/arrow-right.png) no-repeat;
   background-position: left bottom;
   height: 61px;
@@ -417,6 +453,10 @@ h2 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px #00000022;
+          box-shadow: 0 0 5px #00000022;
 }
 
 .statistics li {
@@ -450,6 +490,139 @@ h2 {
   text-align: center;
   width: 75%;
   padding: 0 10%;
+}
+
+.board-members .member {
+  position: relative;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 5px #00000022;
+          box-shadow: 0 0 5px #00000022;
+  margin: 0 2rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: #4662b8;
+}
+
+.board-members .member h3 {
+  margin-top: 2rem;
+  font-size: 22.65px;
+  font-weight: lighter;
+}
+
+.board-members .member h4 {
+  font-size: 14px;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+}
+
+.board-members .member .blender {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #162E79;
+  mix-blend-mode: lighten;
+}
+
+.group-companies {
+  width: 58%;
+  background-color: #3E649C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.group-companies div {
+  position: relative;
+  mix-blend-mode: lighten;
+  width: 25%;
+  padding: 0 3%;
+}
+
+.contact-us {
+  margin: auto;
+  margin-top: 2rem;
+  width: 28rem;
+}
+
+.contact-us .flex-grid {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.contact-us .flex-grid .col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 48%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.contact-us .flex-grid .col-large {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  width: 100%;
+}
+
+.contact-us .flex-grid input,
+.contact-us .flex-grid textarea {
+  font-weight: bolder;
+  padding: 0.875rem;
+  border-radius: 4px;
+  border: 1px solid #3363AC;
+  background-color: #CBD5ED;
+  width: 100%;
+}
+
+.contact-us .flex-grid textarea {
+  resize: vertical;
+}
+
+.contact-us .flex-grid button {
+  padding: 0.875rem;
+  border-radius: 4px;
+  border: 0;
+  width: 25%;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.contact-us .flex-grid button:hover {
+  color: #fff;
+  background-color: #080b4540;
+}
+
+.contact-us .flex-grid button:focus {
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 @-webkit-keyframes rotateForever {
