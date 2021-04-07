@@ -405,6 +405,8 @@ h2 {
 .statistics {
 	display: flex;
 	flex-wrap: wrap;
+	max-width: 80%;
+	margin: auto;
 	border-radius: $base-border-radius;
 	overflow: hidden;
 	box-shadow: $base-box-shadow;
@@ -477,7 +479,7 @@ h2 {
 }
 
 .group-companies {
-	width: 58%;
+	width: 54%;
 	background-color: #3E649C;
 	display: flex;
 	flex-wrap: wrap;
@@ -490,13 +492,13 @@ h2 {
 		position: relative;
 		mix-blend-mode: lighten;
 		// max-height: 18%;
-		width: 25%;
-		padding: 0 3%;
+		width: 11rem;
+		padding: 0 2rem;
 	}
 }
 
 .contact-us {
-	$element-spacing: .5rem;
+	$element-spacing: .5em;
 
 	margin: auto;
 	margin-top: 2rem;
@@ -507,7 +509,7 @@ h2 {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: $element-spacing * 2;
+		margin-bottom: $element-spacing ;
 
 		.col {
 			flex: 1;
@@ -539,19 +541,21 @@ h2 {
 			padding: $tiny-padding;
 			border-radius: $base-border-radius;
 			border: 0;
-			width: 25%;
+			width: 30%;
 			cursor: pointer;
 			transition: all 300ms ease;
+			color: #171717 !important;
+			margin-top: $element-spacing;
 
 			&:hover {
-				color: #fff;
-				background-color: #080b4540;
+				color: #fff !important;
+				background-color: #989bd940;
 			}
 
 			&:focus {
-				$amount: 1px;
-				margin-top: $amount;
-				margin-bottom: $amount;
+				$amount: 0.3em;
+				margin-top: $element-spacing + $amount;
+				margin-bottom: -($amount);
 			}
 		}
 	}
