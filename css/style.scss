@@ -46,6 +46,7 @@ $scaleMap: ($breakpoint-phone: 0.7,
 body {
 	font-size: $base-text-size;
 	line-height: $base-text-line-height;
+	overflow-x: hidden;
 }
 
 a {
@@ -131,32 +132,37 @@ h2 {
 	}
 }
 
-
 .slider-background {
 	//background: url(../img/ellipse-background-of-slider.svg) no-repeat;
 	//background-position: center center;
 	//background-size: 100%;
 	// transform-origin: x-offset y-offset;
-	overflow: hidden;
+	//overflow: hidden;
 	$size: 140em;
 	// $offset: calc( -100em);
 	position: absolute;
 	z-index: -99;
 	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	justify-content: center;
+	height: 80%;
 	display: flex;
+	justify-content: center;
+	align-items: flex-end;
 
 	img {
-		//animation: rotateForever 22s linear infinite;
-		align-self: center;
-		position: absolute;
-		transform: scale(1.6);
-		transform-origin: center;
+		animation: rotateForever 28s cubic-bezier(.36,0,.57,.99) reverse infinite;
+		// align-self: center;
+		// position: absolute;
+		// transform: scale(1.6);
+		// transform-origin: center;
 		//top: -80em;
-		top: -100px;
+		max-width: unset;
+		// width: 100%;
+		// height: 100%;
+		//width: 1000%;
+		//margin-top: -25%;
+		bottom: 0;
+		
+		//animation: rotateForever 11s infinite linear;
 	}
 }
 
@@ -509,7 +515,7 @@ h2 {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: $element-spacing ;
+		margin-bottom: $element-spacing;
 
 		.col {
 			flex: 1;
