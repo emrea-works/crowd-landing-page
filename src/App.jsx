@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import 'App.scss';
+import { Header, Footer } from "./Layout";
+import WelcomingBanner from "./WelcomingBanner";
+import AboutCROWD from "./AboutCROWD";
+import Mission from "./Mission";
+import Companies from "./Companies";
+import CompaniesResponsive from "./CompaniesResponsive";
+import Statistics from "./Statistics";
+import Strategy from "./Strategy";
+import OurSolutions from "./OurSolutions";
+import Projects from "./Projects";
+import Board from "./Board";
+import Groups from "./Groups";
+import ContactUs from "./ContactUs";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <WelcomingBanner features={[gsap, useGSAP]} />
+      <AboutCROWD />
+      <Mission />
+      <Companies />
+      <CompaniesResponsive />
+      <Statistics />
+      <Strategy />
+      <OurSolutions />
+      <Projects />
+      <Board />
+      <Groups />
+      <ContactUs />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
