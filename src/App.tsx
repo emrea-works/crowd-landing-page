@@ -1,23 +1,22 @@
-import 'App.scss';
+import './App.scss';
 import { Header, Footer } from "./Layout";
-import WelcomingBanner from "./WelcomingBanner";
-import AboutCROWD from "./AboutCROWD";
-import Mission from "./Mission";
-import Companies from "./Companies";
-import CompaniesResponsive from "./CompaniesResponsive";
-import Statistics from "./Statistics";
-import Strategy from "./Strategy";
-import OurSolutions from "./OurSolutions";
-import Projects from "./Projects";
-import Board from "./Board";
-import Groups from "./Groups";
-import ContactUs from "./ContactUs";
+import WelcomingBanners from "./sections/WelcomingBanners";
+import AboutCROWD from "./sections/AboutCROWD";
+import Mission from "./sections/Mission";
+import Companies, { CompaniesResponsive } from "./sections/Companies";
+import Statistics from "./sections/Statistics";
+import Strategy from "./sections/Strategy";
+import OurSolutions from "./sections/OurSolutions";
+import Projects from "./sections/Projects";
+import Board from "./sections/Board";
+import Groups from "./sections/Groups";
+import ContactUs from "./sections/ContactUs";
 
 function App() {
   return (
     <>
       <Header />
-      <WelcomingBanner features={[gsap, useGSAP]} />
+      <WelcomingBanners />
       <AboutCROWD />
       <Mission />
       <Companies />
