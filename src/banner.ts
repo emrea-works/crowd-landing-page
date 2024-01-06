@@ -1,39 +1,50 @@
+// declare module "*.json" {
+//   const value: any;
+//   export default value;
+// }
+
 import collages from "./collages.json";
 
-export default banners = [
+export type BannerData = {
+  id: string;
+  collage: string[];
+  title: string;
+};
+
+export const banners: BannerData[] = [
   {
     id: "banner-about_crowd",
     collage: collages.about_crowd,
-		title: "",
+    title: "",
   },
   {
     id: "banner-buy_build",
     collage: collages.buy_build,
-		title: "",
+    title: "",
   },
   {
     id: "banner-circular_economy",
     collage: collages.circular_economy,
-		title: "",
+    title: "",
   },
   {
     id: "banner-design_thinking",
     collage: collages.design_thinking,
-		title: "",
+    title: "",
   },
   {
     id: "banner-smart_city",
     collage: collages.smart_city,
-		title: "We believein <br>Smart City",
+    title: "We believein <br>Smart City",
   },
   {
     id: "banner-solutions",
     collage: collages.solutions,
-		title: "",
+    title: "",
   },
   {
     id: "banner-vision",
     collage: collages.vision,
-		title: "",
+    title: "",
   },
 ];

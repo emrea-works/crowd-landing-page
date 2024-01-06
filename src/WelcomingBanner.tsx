@@ -1,8 +1,9 @@
+import BannerData from './banners';
 import "WelcomingBanner.scss";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import banners from "/banners.js";
+//import { useRef } from "react";
+//import gsap from "gsap";
+//import { useGSAP } from "@gsap/react";
+import banners: BannerData from "./banners";
 
 const WelcomingBanner = () => {
   return (
