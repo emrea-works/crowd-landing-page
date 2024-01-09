@@ -1,4 +1,3 @@
-import './App.scss';
 import { Header, Footer } from "./Layout";
 import WelcomingBanners from "./sections/WelcomingBanners";
 import AboutCROWD from "./sections/AboutCROWD";
